@@ -11,7 +11,7 @@ app = Flask(__name__)
 
 centerCamp = (40.786400, -119.203500)
 
-startingBearing = 360
+startingBearing = 315
 
 def generateArtCoordinates(hour, minute, feet):
   bearing = (30 * int(hour)) + (int(minute) / 60)
