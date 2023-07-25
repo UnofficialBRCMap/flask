@@ -9,7 +9,7 @@ import os
 
 app = Flask(__name__)
 
-centerCamp = [40.78052685763084, -119.21122602690583]
+centerCamp = (40.786400, -119.203500)
 
 startingBearing = 360
 
