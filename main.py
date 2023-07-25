@@ -11,10 +11,12 @@ app = Flask(__name__)
 
 centerCamp = (40.786400, -119.203500)
 
-startingBearing = 315
+startingBearing = 45
 
 def generateArtCoordinates(hour, minute, feet):
-  bearing = (30 * int(hour)) + (int(minute) / 60)
+  bearing = (30 * int(hour)) + (int(minute) / 60) + startingBearing
+  if (bearing > 360): 
+    bearing = bearing - 360
   blockDict = {
     "coordinateToAppend": geopy.distance.distance(feet=int(feet)).destination(centerCamp, bearing=(bearing))
   }
