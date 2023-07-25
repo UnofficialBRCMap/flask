@@ -15,10 +15,8 @@ startingBearing = 45
 
 def generateArtCoordinates(hour, minute, feet):
   bearing = (30 * int(hour)) + (30*(int(minute) / 60)) + startingBearing
-  if (bearing > 360): 
-    bearing = bearing - 360
   blockDict = {
-    "coordinateToAppend": geopy.distance.distance(feet=int(feet)).destination(centerCamp, bearing=45)
+    "coordinateToAppend": geopy.distance.distance(feet=int(feet)).destination(centerCamp, bearing=bearing)
   }
   centerCampCoordinates = [blockDict.get("coordinateToAppend")[0], blockDict.get("coordinateToAppend")[1]]
   print(centerCampCoordinates)
