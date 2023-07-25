@@ -4,7 +4,7 @@ from geopy.distance import geodesic
 from geopy.distance import great_circle
 from geojson import Polygon
 from geojson import FeatureCollection
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 import os
 
 app = Flask(__name__)
@@ -23,7 +23,7 @@ def generateArtCoordinates(hour, minute, feet):
   return centerCampCoordinates
 
 
-@app.route('/get-art-coordinates',methods = ['POST'])
+@app.route('/get-art-coordinates', methods = ['POST'])
 def getCoordinates():
   hour = request.form['hour']
   minute = request.form['minute']
